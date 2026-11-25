@@ -5,10 +5,6 @@ import {
   ChevronLeft,
   Star,
   ArrowRight,
-  ShoppingCart,
-  Building,
-  Radio,
-  QrCode,
   Award,
   Users,
   CheckCircle2,
@@ -47,63 +43,88 @@ export default function WebApplicationPage() {
     { src: '/images/2logo.webp', alt: 'RBIQS' }
   ];
 
-  // Exact 7 Solutions from Screenshot 3:
-  // Row 1 (4 items): eCommerce Development, Website Development, CI Development, Laravel Devleopment
-  // Row 2 (3 items): Enterprise Portal Development, News Portal Development, QR Code Development
+  // Exact 7 Solutions matching Screenshot 1 (original website):
+  // 1. eCommerce Development
+  // 2. Website Development
+  // 3. CI Development (Center highlighted dark navy circle)
+  // 4. Laravel Devleopment
+  // 5. Enterprise Portal Development
+  // 6. News Portal Development (Center highlighted dark navy circle)
+  // 7. QR Code Development
   const webSolutions = [
     {
       id: 'ecommerce',
-      title: 'eCommerce Development',
+      title: 'eCommerce\nDevelopment',
       desc: 'Xpecto is a leading e-commerce app development company specializing in creating high-performance online stores. Our services encompass the creation of custom e-commerce websites, enabling businesses to sell products and services directly to consumers over the internet.',
-      icon: ShoppingCart,
-      isPrimary: false
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+        </svg>
+      ),
+      isDarkBadge: false
     },
     {
       id: 'website-dev',
-      title: 'Website Development',
+      title: 'Website\nDevelopment',
       desc: 'Xpecto is a leading website development company in India with a proven track record of crafting secure, lightning-fast, and responsive digital presences that convert visitors into loyal clients.',
       badgeText: 'php',
-      isPrimary: false
+      isDarkBadge: false
     },
     {
       id: 'ci-dev',
       title: 'CI Development',
       desc: 'Continuous Integration (CI) is a software development practice where developers frequently merge their code changes into a central repository, followed by automated builds and testing.',
       badgeText: '</>',
-      isPrimary: true
+      isDarkBadge: true
     },
     {
       id: 'laravel',
       title: 'Laravel Devleopment',
       desc: 'Xpecto has a team of Laravel developers who build high-grade, scalable web applications with modular MVC architectures, RESTful APIs, and rock-solid database security.',
-      badgeText: 'Laravel',
-      isPrimary: false
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+      ),
+      isDarkBadge: false
     },
     {
       id: 'enterprise-portal',
-      title: 'Enterprise Portal Development',
+      title: 'Enterprise Portal\nDevelopment',
       desc: 'Enterprise portal development refers to the creation of secure internal, customer, and supplier transactional platforms that consolidate disparate corporate applications into one interface.',
-      icon: Building,
-      isPrimary: false
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/>
+        </svg>
+      ),
+      isDarkBadge: false
     },
     {
       id: 'news-portal',
-      title: 'News Portal Development',
+      title: 'News Portal\nDevelopment',
       desc: 'Xpecto is a well-known news website and media portal development agency, engineering rapid content publishing pipelines, live telemetry, and high-traffic optimization.',
-      icon: Radio,
-      isPrimary: false
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>
+        </svg>
+      ),
+      isDarkBadge: true
     },
     {
       id: 'qr-code',
-      title: 'QR Code Development',
+      title: 'QR Code\nDevelopment',
       desc: 'Xpecto is a leading IT solutions provider that integrates dynamic QR code generation, contactless digital verification, inventory scanning, and mobile tracking workflows.',
-      icon: QrCode,
-      isPrimary: false
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+      ),
+      isDarkBadge: false
     }
   ];
 
-  // Real stats from Screenshot 4:
-  // 4000+ Successful Projects, 11+ Years of Experience, 500+ Satisfied Clients, 80% From Reference
   const stats = [
     { number: '4000+', label: 'Successful Projects', icon: Award },
     { number: '11+', label: 'Years of Experience', icon: Users },
@@ -111,7 +132,6 @@ export default function WebApplicationPage() {
     { number: '80%', label: 'From Reference', icon: Globe2 }
   ];
 
-  // Real Partners for the interactive Slider (Screenshot 5)
   const allPartners = [
     { name: 'AWS Partner Network', src: '/images/aws-partner.png', fallback: '/images/aws.png', role: 'AWS PARTNER NETWORK ★★★' },
     { name: 'EnKosh', src: '/images/enkash.png', fallback: '/images/enkash.png', role: 'AUTHORIZED PARTNER ★★★' },
@@ -130,9 +150,9 @@ export default function WebApplicationPage() {
   };
 
   return (
-    <div className="w-full bg-white text-slate-800 transition-colors duration-200">
+    <div className="w-full bg-white text-slate-800">
       
-      {/* 1. HERO SECTION (Exact Soft Pink & Purple Wave Gradient from Screenshot 2) */}
+      {/* 1. HERO SECTION */}
       <section 
         className="relative w-full py-20 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden text-white"
         style={{
@@ -142,14 +162,12 @@ export default function WebApplicationPage() {
         <div className="absolute -left-20 -top-20 w-[600px] h-[600px] rounded-full border-[40px] border-white/10 pointer-events-none" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-white/5 blur-2xl pointer-events-none" />
 
-        {/* Left colored angled accent pills */}
         <div className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 flex flex-col gap-1.5 opacity-90 z-10">
           <div className="w-4 sm:w-6 h-1.5 bg-amber-400 rotate-45 rounded-full" />
           <div className="w-5 sm:w-7 h-1.5 bg-cyan-400 rotate-45 rounded-full" />
           <div className="w-4 sm:w-6 h-1.5 bg-rose-500 rotate-45 rounded-full" />
         </div>
 
-        {/* Twinkle star */}
         <div className="absolute right-12 sm:right-28 bottom-12 hidden md:block z-10 opacity-80">
           <svg width="45" height="45" viewBox="0 0 40 40" fill="none">
             <path d="M20 0L23 15L38 20L23 25L20 40L17 25L2 20L17 15L20 0Z" fill="white" />
@@ -168,8 +186,8 @@ export default function WebApplicationPage() {
         </div>
       </section>
 
-      {/* 2. REAL HIGH-RES CLIENT LOGOS STRIP (Screenshot 2 Match) */}
-      <section className="w-full bg-white border-b border-slate-100 py-6 sm:py-8 overflow-hidden shadow-xs">
+      {/* 2. CLIENT LOGOS STRIP */}
+      <section className="w-full bg-white border-b border-slate-100 py-6 sm:py-8 overflow-hidden">
         <div className="w-full overflow-hidden">
           <div className="animate-marquee flex items-center gap-12 sm:gap-16">
             {clientLogos.map((client, idx) => (
@@ -202,109 +220,101 @@ export default function WebApplicationPage() {
         </div>
       </section>
 
-      {/* 3. "WHAT WE OFFER" & "Web Applications solutions" (Screenshot 3 Exact Clean Cards) */}
+      {/* 3. EXACT SECOND SECTION (Matches original site Screenshot 1 100%) */}
       <section id="solutions" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+        {/* Section Header */}
         <div className="text-center mb-14 sm:mb-16">
-          <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-cyan-600 mb-2 block">
+          <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-[#00a3ff] mb-2 block">
             WHAT WE OFFER
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#071330] tracking-tight">
             We Offer An Effective<br />
-            <span className="text-[#071330]">Web Applications solutions</span>
+            Web Applications solutions
           </h2>
         </div>
 
-        {/* Row 1: 4 Cards (eCommerce, Website, CI Development, Laravel) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
-          {webSolutions.slice(0, 4).map((item) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.12)] border border-slate-100 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
-              >
-                <div>
-                  {/* Circular Icon with real Xpecto styling */}
-                  <div className="flex justify-center mb-6">
-                    <div className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-sm transition-transform shadow-xs ${
-                      item.isPrimary
-                        ? 'bg-[#1e2a5e] text-white'
-                        : 'bg-blue-50 text-blue-600 border border-blue-100'
-                    }`}>
-                      {IconComponent ? (
-                        <IconComponent className="w-6 h-6 stroke-[1.8]" />
-                      ) : (
-                        <span className="font-bold text-sm tracking-tight">{item.badgeText}</span>
-                      )}
-                    </div>
+        {/* Row 1: 4 Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-10">
+          {webSolutions.slice(0, 4).map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-slate-100/80 flex flex-col justify-between hover:shadow-[0_10px_35px_rgba(0,0,0,0.08)] transition-all"
+            >
+              <div>
+                {/* Floating circle icon matching exact original screenshot */}
+                <div className="flex justify-center -mt-2 mb-6">
+                  <div className={`w-13 h-13 rounded-full flex items-center justify-center shadow-xs ${
+                    item.isDarkBadge 
+                      ? 'bg-[#152347] text-white font-mono font-bold text-sm'
+                      : 'bg-[#edf4ff] text-[#00a3ff] font-bold text-sm'
+                  }`}>
+                    {item.icon ? item.icon : item.badgeText}
                   </div>
-
-                  <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-6">
-                    {item.desc}
-                  </p>
                 </div>
 
-                <div className="text-center pt-2">
-                  <a
-                    href="#quote-section"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00a3ff] hover:text-blue-700 uppercase tracking-wider transition-colors"
-                  >
-                    <span>READ MORE</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug whitespace-pre-line">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-8 line-clamp-4">
+                  {item.desc}
+                </p>
               </div>
-            );
-          })}
+
+              {/* READ MORE Button matching exact blue button pill */}
+              <div className="text-center">
+                <a
+                  href="#quote-section"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-[#f0f6ff] hover:bg-[#00a3ff] text-[#00a3ff] hover:text-white rounded-md text-[11px] font-bold tracking-wider uppercase transition-colors"
+                >
+                  <span>READ MORE</span>
+                  <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Row 2: 3 Cards Centered (Enterprise Portal, News Portal, QR Code) */}
+        {/* Row 2: 3 Cards Centered */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          {webSolutions.slice(4, 7).map((item) => {
-            const IconComponent = item.icon;
-            return (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_25px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_35px_rgba(0,0,0,0.12)] border border-slate-100 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5"
-              >
-                <div>
-                  <div className="flex justify-center mb-6">
-                    <div className="w-14 h-14 rounded-full bg-blue-50 text-blue-600 border border-blue-100 flex items-center justify-center font-bold text-sm shadow-xs">
-                      {IconComponent ? (
-                        <IconComponent className="w-6 h-6 stroke-[1.8]" />
-                      ) : (
-                        <span className="font-bold text-sm tracking-tight">{item.badgeText}</span>
-                      )}
-                    </div>
+          {webSolutions.slice(4, 7).map((item) => (
+            <div
+              key={item.id}
+              className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-slate-100/80 flex flex-col justify-between hover:shadow-[0_10px_35px_rgba(0,0,0,0.08)] transition-all"
+            >
+              <div>
+                <div className="flex justify-center -mt-2 mb-6">
+                  <div className={`w-13 h-13 rounded-full flex items-center justify-center shadow-xs ${
+                    item.isDarkBadge 
+                      ? 'bg-[#152347] text-white font-mono font-bold text-sm'
+                      : 'bg-[#edf4ff] text-[#00a3ff] font-bold text-sm'
+                  }`}>
+                    {item.icon ? item.icon : item.badgeText}
                   </div>
-
-                  <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-6">
-                    {item.desc}
-                  </p>
                 </div>
 
-                <div className="text-center pt-2">
-                  <a
-                    href="#quote-section"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00a3ff] hover:text-blue-700 uppercase tracking-wider transition-colors"
-                  >
-                    <span>READ MORE</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug whitespace-pre-line">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-8 line-clamp-4">
+                  {item.desc}
+                </p>
               </div>
-            );
-          })}
+
+              <div className="text-center">
+                <a
+                  href="#quote-section"
+                  className="inline-flex items-center justify-center px-4 py-2 bg-[#f0f6ff] hover:bg-[#00a3ff] text-[#00a3ff] hover:text-white rounded-md text-[11px] font-bold tracking-wider uppercase transition-colors"
+                >
+                  <span>READ MORE</span>
+                  <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* 4. METRICS / STATS SECTION (Exact Screenshot 4 match: 4000+, 11+, 500+, 80%) */}
+      {/* 4. METRICS / STATS SECTION */}
       <section className="w-full bg-white border-y border-slate-200 py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
@@ -328,11 +338,10 @@ export default function WebApplicationPage() {
         </div>
       </section>
 
-      {/* 5. GET A QUOTE & CLIENT TESTIMONIAL (Exact Screenshot 4 match) */}
+      {/* 5. GET A QUOTE & CLIENT TESTIMONIAL */}
       <section id="quote-section" className="w-full bg-[#0b1442] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Quote Form Card */}
           <div className="lg:col-span-5 bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-slate-200">
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-6 text-center">
               Get A Quote
@@ -422,7 +431,6 @@ export default function WebApplicationPage() {
             </form>
           </div>
 
-          {/* Testimonial from Dean Roberts / VisionSafe */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="mb-4">
               <h4 className="text-xl sm:text-2xl font-bold text-white">
@@ -469,7 +477,7 @@ export default function WebApplicationPage() {
         </div>
       </section>
 
-      {/* 6. OUR PARTNERS (Interactive Slider with Left/Right Arrows - Screenshot 5 Match) */}
+      {/* 6. OUR PARTNERS (Interactive Slider with Left/Right Arrows) */}
       <section className="w-full bg-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#071330] mb-12 tracking-tight">
@@ -477,7 +485,6 @@ export default function WebApplicationPage() {
           </h2>
 
           <div className="relative flex items-center justify-center max-w-5xl mx-auto px-4 sm:px-8">
-            {/* Left Carousel Arrow */}
             <button
               onClick={prevPartners}
               className="absolute left-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-cyan-600 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all shadow-xs cursor-pointer"
@@ -486,7 +493,6 @@ export default function WebApplicationPage() {
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* 4 Active Partner Shields Grid in view */}
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 w-full px-6 transition-all duration-300">
               {allPartners.slice(partnerIndex, partnerIndex + 4).map((p, idx) => (
                 <div
@@ -513,7 +519,6 @@ export default function WebApplicationPage() {
               ))}
             </div>
 
-            {/* Right Carousel Arrow */}
             <button
               onClick={nextPartners}
               className="absolute right-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-cyan-600 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all shadow-xs cursor-pointer"
