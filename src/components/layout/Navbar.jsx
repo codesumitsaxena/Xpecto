@@ -180,18 +180,6 @@ export default function Navbar() {
             <NavLink to="/blogs" className={navLinkClass}>Blogs</NavLink>
             <NavLink to="/contact" className={navLinkClass}>Contact Us</NavLink>
 
-            {/* Theme Toggle Button (Light/Dark) */}
-            <button
-              onClick={toggleTheme}
-              title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              className="ml-2 p-2 rounded-full border border-slate-300 dark:border-cyan-500/40 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-cyan-500/20 transition-all cursor-pointer"
-            >
-              {isDark
-                ? <Sun className="w-4 h-4 text-amber-400" />
-                : <Moon className="w-4 h-4 text-slate-700" />
-              }
-            </button>
-
             {/* Xpecto AI */}
             <Link
               to="/services/custom-application"
@@ -204,12 +192,6 @@ export default function Navbar() {
 
           {/* Mobile right controls */}
           <div className="lg:hidden flex items-center gap-2">
-            <button 
-              onClick={toggleTheme} 
-              className="p-2 rounded-full border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 cursor-pointer"
-            >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
