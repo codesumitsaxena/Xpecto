@@ -55,7 +55,7 @@ export default function WebApplicationPage() {
     {
       id: 'ecommerce',
       title: 'eCommerce\nDevelopment',
-      desc: 'Xpecto is a leading e-commerce app development company specializing in creating high-performance online stores. Our services encompass the creation of custom e-commerce websites, enabling businesses to sell products and services directly to consumers over the internet.',
+      desc: 'Xpecto is a leading e-commerce app...',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/>
@@ -67,23 +67,23 @@ export default function WebApplicationPage() {
     {
       id: 'website-dev',
       title: 'Website\nDevelopment',
-      desc: 'Xpecto is a leading website development company in India with a proven track record of crafting secure, lightning-fast, and responsive digital presences that convert visitors into loyal clients.',
+      desc: 'Xpecto is a leading website development...',
       badgeText: 'php',
       isDarkBadge: false
     },
     {
       id: 'ci-dev',
       title: 'CI Development',
-      desc: 'Continuous Integration (CI) is a software development practice where developers frequently merge their code changes into a central repository, followed by automated builds and testing.',
+      desc: 'Continuous Integration (CI) is a software development practice...',
       badgeText: '</>',
       isDarkBadge: true
     },
     {
       id: 'laravel',
       title: 'Laravel Devleopment',
-      desc: 'Xpecto has a team of Laravel developers who build high-grade, scalable web applications with modular MVC architectures, RESTful APIs, and rock-solid database security.',
+      desc: 'Xpecto has a team of Laravel developers who build...',
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
           <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
         </svg>
@@ -93,10 +93,15 @@ export default function WebApplicationPage() {
     {
       id: 'enterprise-portal',
       title: 'Enterprise Portal\nDevelopment',
-      desc: 'Enterprise portal development refers to the creation of secure internal, customer, and supplier transactional platforms that consolidate disparate corporate applications into one interface.',
+      desc: 'Enterprise portal development refers to the...',
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+          <line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/>
+          <line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/>
+          <line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/>
+          <line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/>
+          <line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/>
         </svg>
       ),
       isDarkBadge: false
@@ -104,7 +109,7 @@ export default function WebApplicationPage() {
     {
       id: 'news-portal',
       title: 'News Portal\nDevelopment',
-      desc: 'Xpecto is a well-known news website and media portal development agency, engineering rapid content publishing pipelines, live telemetry, and high-traffic optimization.',
+      desc: 'Xpecto is a well-known news website...',
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>
@@ -115,9 +120,9 @@ export default function WebApplicationPage() {
     {
       id: 'qr-code',
       title: 'QR Code\nDevelopment',
-      desc: 'Xpecto is a leading IT solutions provider that integrates dynamic QR code generation, contactless digital verification, inventory scanning, and mobile tracking workflows.',
+      desc: 'Xpecto is a leading IT solutions provider that...',
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
         </svg>
       ),
@@ -221,9 +226,9 @@ export default function WebApplicationPage() {
       </section>
 
       {/* 3. EXACT SECOND SECTION (Matches original site Screenshot 1 100%) */}
-      <section id="solutions" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+      <section id="solutions" className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
         {/* Section Header */}
-        <div className="text-center mb-14 sm:mb-16">
+        <div className="text-center mb-10 sm:mb-12">
           <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-[#00a3ff] mb-2 block">
             WHAT WE OFFER
           </span>
@@ -233,80 +238,50 @@ export default function WebApplicationPage() {
           </h2>
         </div>
 
-        {/* Row 1: 4 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-10">
-          {webSolutions.slice(0, 4).map((item) => (
+        {/* 7 Solution Cards: Row 1 (4 cards) + Row 2 (3 cards centered) */}
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-6 max-w-6xl mx-auto">
+          {webSolutions.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-slate-100/80 flex flex-col justify-between hover:shadow-[0_10px_35px_rgba(0,0,0,0.08)] transition-all"
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white rounded-2xl p-6 shadow-[0_4px_25px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col justify-between items-center text-center transition-all duration-300"
             >
-              <div>
-                {/* Floating circle icon matching exact original screenshot */}
-                <div className="flex justify-center -mt-2 mb-6">
-                  <div className={`w-13 h-13 rounded-full flex items-center justify-center shadow-xs ${
-                    item.isDarkBadge 
-                      ? 'bg-[#152347] text-white font-mono font-bold text-sm'
-                      : 'bg-[#edf4ff] text-[#00a3ff] font-bold text-sm'
-                  }`}>
-                    {item.icon ? item.icon : item.badgeText}
-                  </div>
+              <div className="flex flex-col items-center w-full">
+                {/* Floating Circle Icon */}
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
+                  item.isDarkBadge 
+                    ? 'bg-[#152347] text-white font-mono font-bold text-sm'
+                    : 'bg-[#edf4ff] text-[#00a3ff] font-bold text-sm'
+                }`}>
+                  {item.badgeText ? (
+                    item.badgeText === 'php' ? (
+                      <span className="text-[11px] font-semibold border border-blue-400/60 rounded-full px-1.5 py-0.5 text-[#00a3ff]">(php)</span>
+                    ) : (
+                      <span>{item.badgeText}</span>
+                    )
+                  ) : (
+                    item.icon
+                  )}
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug whitespace-pre-line">
+                {/* Title */}
+                <h3 className="text-[15px] sm:text-base font-bold text-[#071330] text-center mb-2 leading-snug whitespace-pre-line min-h-[44px] flex items-center justify-center">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-8 line-clamp-4">
+
+                {/* Truncated Description */}
+                <p className="text-xs text-slate-500 text-center leading-relaxed font-normal mb-6 min-h-[36px] max-w-[210px]">
                   {item.desc}
                 </p>
               </div>
 
-              {/* READ MORE Button matching exact blue button pill */}
-              <div className="text-center">
+              {/* READ MORE Button */}
+              <div className="pt-1">
                 <a
                   href="#quote-section"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-[#f0f6ff] hover:bg-[#00a3ff] text-[#00a3ff] hover:text-white rounded-md text-[11px] font-bold tracking-wider uppercase transition-colors"
+                  className="inline-flex items-center justify-center px-4 py-1.5 bg-[#edf4ff] hover:bg-[#00a3ff] text-[#00a3ff] hover:text-white rounded-md text-[11px] font-bold tracking-wider uppercase transition-colors"
                 >
                   <span>READ MORE</span>
-                  <span className="ml-1">→</span>
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Row 2: 3 Cards Centered */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          {webSolutions.slice(4, 7).map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-2xl p-7 sm:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-slate-100/80 flex flex-col justify-between hover:shadow-[0_10px_35px_rgba(0,0,0,0.08)] transition-all"
-            >
-              <div>
-                <div className="flex justify-center -mt-2 mb-6">
-                  <div className={`w-13 h-13 rounded-full flex items-center justify-center shadow-xs ${
-                    item.isDarkBadge 
-                      ? 'bg-[#152347] text-white font-mono font-bold text-sm'
-                      : 'bg-[#edf4ff] text-[#00a3ff] font-bold text-sm'
-                  }`}>
-                    {item.icon ? item.icon : item.badgeText}
-                  </div>
-                </div>
-
-                <h3 className="text-base sm:text-lg font-bold text-[#071330] text-center mb-3 leading-snug whitespace-pre-line">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-500 text-center leading-relaxed font-normal mb-8 line-clamp-4">
-                  {item.desc}
-                </p>
-              </div>
-
-              <div className="text-center">
-                <a
-                  href="#quote-section"
-                  className="inline-flex items-center justify-center px-4 py-2 bg-[#f0f6ff] hover:bg-[#00a3ff] text-[#00a3ff] hover:text-white rounded-md text-[11px] font-bold tracking-wider uppercase transition-colors"
-                >
-                  <span>READ MORE</span>
-                  <span className="ml-1">→</span>
+                  <span className="ml-1 text-xs">→</span>
                 </a>
               </div>
             </div>
