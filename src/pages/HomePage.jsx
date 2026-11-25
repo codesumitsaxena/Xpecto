@@ -116,36 +116,59 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Hero Image + Floating Badges */}
-            <div className="lg:col-span-6 relative flex justify-center items-center mt-4 lg:mt-0">
-              {/* Outer glow */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/20 via-blue-500/15 to-indigo-500/20 rounded-3xl blur-2xl pointer-events-none" />
+            {/* Right: Consultant Portrait + Concentric Rings + Floating Badges */}
+            <div className="lg:col-span-6 relative flex justify-center items-center mt-6 lg:mt-0 py-4">
+              <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[440px] lg:h-[440px] flex items-center justify-center">
+                {/* Concentric Glowing Cyan/Blue Rings (ProVice style) */}
+                <div className="absolute inset-0 rounded-full border border-cyan-400/20 bg-gradient-to-br from-cyan-500/10 to-blue-600/5" />
+                <div className="absolute inset-6 sm:inset-8 rounded-full border border-cyan-400/25 bg-gradient-to-tr from-cyan-500/15 via-blue-500/10 to-transparent" />
+                <div className="absolute inset-12 sm:inset-16 rounded-full bg-gradient-to-b from-cyan-400/25 to-blue-600/20 blur-[1px] border border-cyan-300/30" />
 
-              <div className="relative w-full max-w-lg lg:max-w-full rounded-3xl overflow-hidden border border-cyan-500/25 bg-[#0a193a] shadow-2xl shadow-cyan-950/50">
-                <img
-                  src="/images/hero-showcase.jpg"
-                  alt="Xpecto Digital Solutions Architecture"
-                  className="w-full h-[260px] sm:h-[340px] lg:h-[400px] object-cover"
-                  onError={(e) => {
-                    e.target.src = '/images/consulting_img.jpg';
-                  }}
-                />
-                {/* Subtle gradient overlay at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06112a]/80 via-transparent to-transparent pointer-events-none" />
+                {/* Portrait Image */}
+                <div className="relative w-[220px] h-[220px] sm:w-[290px] sm:h-[290px] lg:w-[320px] lg:h-[320px] rounded-full overflow-hidden border-2 border-cyan-400/40 shadow-[0_0_50px_rgba(0,163,255,0.28)] bg-[#06112a]">
+                  <img
+                    src="/images/hero-consultant.jpg"
+                    alt="Xpecto Tech Consultation Expert"
+                    className="w-full h-full object-cover object-top scale-105"
+                    onError={(e) => {
+                      e.target.src = '/images/consulting_img.jpg';
+                    }}
+                  />
+                </div>
 
-                {/* Bottom overlay mini-stats bar */}
-                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-2 sm:gap-3 bg-[#06112a]/80 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4">
-                  <div className="text-center">
-                    <div className="text-base sm:text-xl font-black text-cyan-400">4000+</div>
-                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Projects</div>
+                {/* Floating Card 1: Left — 4000+ Projects Delivered */}
+                <div className="absolute -left-2 sm:-left-6 top-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-md text-[#071330] rounded-2xl p-2.5 sm:p-3.5 shadow-2xl border border-white/60 flex items-center gap-2.5 sm:gap-3 z-20 max-w-[175px] sm:max-w-[210px]">
+                  <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#00a3ff]" />
                   </div>
-                  <div className="text-center border-x border-white/10">
-                    <div className="text-base sm:text-xl font-black text-white">11+ Yrs</div>
-                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Experience</div>
+                  <div>
+                    <div className="text-sm sm:text-lg font-black leading-none text-[#071330]">4000+</div>
+                    <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight mt-0.5">
+                      Projects Delivered with Satisfaction
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-base sm:text-xl font-black text-emerald-400">500+</div>
-                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Happy Clients</div>
+                </div>
+
+                {/* Floating Badge 2: Top Right — Growth Icon */}
+                <div className="absolute right-2 sm:right-6 top-6 sm:top-10 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-xl border-4 border-cyan-400/30 flex items-center justify-center z-20">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white">
+                    <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </div>
+                </div>
+
+                {/* Floating Card 3: Bottom Right — Our Experts */}
+                <div className="absolute -right-1 sm:-right-4 bottom-4 sm:bottom-8 bg-white/95 backdrop-blur-md text-[#071330] rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-2xl border border-white/60 z-20">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-5 h-5 rounded-full bg-rose-500 flex items-center justify-center">
+                      <Zap className="w-3 h-3 text-white fill-white" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-extrabold text-[#071330]">Our Experts</span>
+                  </div>
+                  <div className="flex items-center -space-x-2">
+                    <div className="w-7 h-7 rounded-full bg-cyan-600 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">AK</div>
+                    <div className="w-7 h-7 rounded-full bg-blue-600 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">RS</div>
+                    <div className="w-7 h-7 rounded-full bg-indigo-600 border-2 border-white flex items-center justify-center text-[10px] font-bold text-white">PM</div>
+                    <div className="w-7 h-7 rounded-full bg-slate-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-[#071330]">+25</div>
                   </div>
                 </div>
               </div>
