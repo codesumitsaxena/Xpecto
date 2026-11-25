@@ -158,7 +158,7 @@ export default function WebApplicationPage() {
 
         <div className="relative max-w-4xl mx-auto text-center px-4 z-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 text-white drop-shadow-sm leading-tight">
-            Best Web Application Maintenance<br />Service
+            Best Web Application<br />Maintenance Service
           </h1>
           <p className="text-xs sm:text-sm md:text-base text-white/95 leading-relaxed max-w-2xl mx-auto font-normal">
             Xpecto is a leading e-commerce app development company specializing in creating high-performance
