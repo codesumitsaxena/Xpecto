@@ -758,46 +758,37 @@ export default function CustomApplicationPage() {
         </div>
       </section>
 
-      {/* ======================== SECTION 10: OUR PARTNERS SLIDER (Badge style) ======================== */}
+      {/* ======================== SECTION 10: OUR PARTNERS SLIDER (Badge shield images) ======================== */}
       <section className="w-full bg-white py-14 px-4 sm:px-8 lg:px-16 border-b border-slate-200">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#071330] mb-10">Our Partners</h2>
-          <div className="relative flex items-center justify-center max-w-5xl mx-auto px-10">
+          <div className="relative flex items-center justify-center max-w-4xl mx-auto px-10">
+            {/* Left arrow */}
             <button
               onClick={prevPartners}
-              className="absolute left-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all text-lg font-bold"
+              className="absolute left-0 z-10 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-cyan-600 transition-colors text-2xl font-light"
             >
               ‹
             </button>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 transition-all duration-300">
+
+            {/* Badge images grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 w-full px-4">
               {allPartners.slice(partnerIndex, partnerIndex + 4).map((p, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center">
-                  {/* Badge-shield style card */}
-                  <div className="w-36 sm:w-40 relative flex flex-col items-center">
-                    <div className="w-full bg-[#1a2d6b] rounded-t-2xl pt-4 pb-2 px-3 flex items-center justify-center min-h-[70px]">
-                      <img
-                        src={p.src}
-                        alt={p.name}
-                        className="max-h-12 max-w-full object-contain filter brightness-0 invert"
-                        onError={(e) => { e.target.src = p.fallback; e.target.className = 'max-h-10 max-w-full object-contain'; }}
-                      />
-                    </div>
-                    <div className="w-full bg-[#1a3a8f] px-2 py-2 text-center">
-                      <p className="text-[10px] font-bold text-white leading-tight uppercase tracking-wide">{p.role}</p>
-                    </div>
-                    {/* Stars row */}
-                    <div className="w-full bg-[#1a2d6b] px-2 py-1.5 flex justify-center gap-0.5 rounded-b-xl">
-                      {[...Array(3)].map((_, i) => (
-                        <svg key={i} className="w-3 h-3 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                      ))}
-                    </div>
-                  </div>
+                <div key={idx} className="flex items-center justify-center">
+                  <img
+                    src={p.src}
+                    alt={p.name}
+                    className="w-32 sm:w-36 md:w-40 h-auto object-contain drop-shadow-sm hover:drop-shadow-md transition-all"
+                    onError={(e) => { e.target.src = p.fallback; }}
+                  />
                 </div>
               ))}
             </div>
+
+            {/* Right arrow */}
             <button
               onClick={nextPartners}
-              className="absolute right-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all text-lg font-bold"
+              className="absolute right-0 z-10 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-cyan-600 transition-colors text-2xl font-light"
             >
               ›
             </button>
