@@ -756,40 +756,39 @@ export default function CustomApplicationPage() {
         </div>
       </section>
 
-      {/* ======================== SECTION 10: OUR PARTNERS SLIDER (Badge shield images) ======================== */}
+      {/* ======================== SECTION 10: OUR PARTNERS - Auto-scroll marquee ======================== */}
       <section className="w-full bg-white py-14 px-4 sm:px-8 lg:px-16 border-b border-slate-200">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#071330] mb-10">Our Partners</h2>
-          <div className="relative flex items-center justify-center max-w-4xl mx-auto px-10">
-            {/* Left arrow */}
-            <button
-              onClick={prevPartners}
-              className="absolute left-0 z-10 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-cyan-600 transition-colors text-2xl font-light"
-            >
-              ‹
-            </button>
 
-            {/* Badge images grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10 w-full px-4">
-              {allPartners.slice(partnerIndex, partnerIndex + 4).map((p, idx) => (
-                <div key={idx} className="flex items-center justify-center">
+          {/* Auto-scrolling marquee */}
+          <div className="w-full overflow-hidden">
+            <div className="animate-marquee flex items-center gap-12 sm:gap-16">
+              {[
+                { name: 'EnKash', src: '/images/enkash.png' },
+                { name: 'Tally Prime', src: '/images/tally.png' },
+                { name: 'PhonePe', src: '/images/phonepe.png' },
+                { name: 'WhatsApp API', src: '/images/interkat-whatsapp-business-api-partner.png' },
+                { name: 'Microsoft 365', src: '/images/microsoft-365-partner.png' },
+                { name: 'AWS Partner', src: '/images/aws-partner.png' },
+                // duplicate for seamless loop
+                { name: 'EnKash', src: '/images/enkash.png' },
+                { name: 'Tally Prime', src: '/images/tally.png' },
+                { name: 'PhonePe', src: '/images/phonepe.png' },
+                { name: 'WhatsApp API', src: '/images/interkat-whatsapp-business-api-partner.png' },
+                { name: 'Microsoft 365', src: '/images/microsoft-365-partner.png' },
+                { name: 'AWS Partner', src: '/images/aws-partner.png' },
+              ].map((p, idx) => (
+                <div key={idx} className="shrink-0 flex items-center justify-center">
                   <img
                     src={p.src}
                     alt={p.name}
-                    className="w-32 sm:w-36 md:w-40 h-auto object-contain"
-                    onError={(e) => { e.target.src = p.fallback; }}
+                    className="h-28 sm:h-32 w-auto object-contain"
+                    onError={(e) => { e.target.style.display = 'none'; }}
                   />
                 </div>
               ))}
             </div>
-
-            {/* Right arrow */}
-            <button
-              onClick={nextPartners}
-              className="absolute right-0 z-10 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-cyan-600 transition-colors text-2xl font-light"
-            >
-              ›
-            </button>
           </div>
         </div>
       </section>
