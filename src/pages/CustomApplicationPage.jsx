@@ -244,9 +244,7 @@ export default function CustomApplicationPage() {
     { name: 'PhonePe', src: '/images/phonepe.png', fallback: '/images/phonepe.png', role: 'PARTNER NETWORK' },
     { name: 'Microsoft 365', src: '/images/microsoft-365-partner.png', fallback: '/images/microsoft.png', role: 'CLOUD PARTNER' },
     { name: 'WhatsApp Business API', src: '/images/interkat-whatsapp-business-api-partner.png', fallback: '/images/interkat-whatsapp-business-api-partner.png', role: 'API INTEGRATION PARTNER' },
-  ];
-
-  const nextPartners = () => setPartnerIndex((p) => (p + 1 >= allPartners.length - 3 ? 0 : p + 1));
+  ];  const nextPartners = () => setPartnerIndex((p) => (p + 1 >= allPartners.length - 3 ? 0 : p + 1));
   const prevPartners = () => setPartnerIndex((p) => (p <= 0 ? allPartners.length - 4 : p - 1));
 
   const activeRole = roleTabs.find((t) => t.id === activeTab);
@@ -778,7 +776,7 @@ export default function CustomApplicationPage() {
                   <img
                     src={p.src}
                     alt={p.name}
-                    className="w-32 sm:w-36 md:w-40 h-auto object-contain drop-shadow-sm hover:drop-shadow-md transition-all"
+                    className="w-32 sm:w-36 md:w-40 h-auto object-contain"
                     onError={(e) => { e.target.src = p.fallback; }}
                   />
                 </div>
