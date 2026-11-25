@@ -22,7 +22,14 @@ import {
   Layers,
   Link,
   TrendingUp,
-  LifeBuoy
+  LifeBuoy,
+  FileSearch,
+  Calendar,
+  Code2,
+  Wrench,
+  Rocket,
+  ChevronDown,
+  Plus
 } from 'lucide-react';
 
 export default function CustomApplicationPage() {
@@ -30,6 +37,7 @@ export default function CustomApplicationPage() {
   const [partnerIndex, setPartnerIndex] = useState(0);
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', country: 'India', description: '' });
   const [techTab, setTechTab] = useState('frontend');
+  const [openFaq, setOpenFaq] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -662,38 +670,136 @@ export default function CustomApplicationPage() {
         </div>
       </section>
 
-      {/* ======================== SECTION 8: OUR PARTNERS SLIDER ======================== */}
+      {/* ======================== SECTION 8: OUR PROCESS ======================== */}
+      <section className="w-full py-14 px-4 sm:px-8 lg:px-16 bg-[#1a2d6b]">
+        <div className="max-w-6xl mx-auto">
+          <span className="text-xs font-bold tracking-widest uppercase text-cyan-400 mb-3 block">
+            OUR PROCESS
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-10 leading-tight max-w-xl">
+            Let's Discover Our Service<br />Features Charter
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                icon: FileSearch,
+                title: 'Information\ngathering',
+                desc: 'We gather all necessary information about the website\'s purpose, goals, and target audience. It is important for development process.',
+              },
+              {
+                icon: Calendar,
+                title: 'Planning',
+                desc: 'We plan for structure and layout of the website. It includes creating a sitemap and defining the technologies required for development process.',
+              },
+              {
+                icon: Code2,
+                title: 'Coding',
+                desc: 'It involves development of front-end and back-end using programming languages, server-side languages, and technologies such as HTML, CSS, and JavaScript.',
+              },
+              {
+                icon: Wrench,
+                title: 'Maintenance',
+                desc: 'After website is launched, we involve regular monitoring, addressing any issues that arise, and keeping the content and design up to date.',
+              },
+            ].map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white/10 hover:bg-white/15 border border-white/10 rounded-2xl p-6 flex flex-col gap-4 transition-all"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-400">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-extrabold text-white leading-snug whitespace-pre-line">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================== SECTION 9: FAQ ======================== */}
+      <section className="w-full py-14 px-4 sm:px-8 lg:px-16 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#071330] text-center mb-3">
+            Frequently asked questions
+          </h2>
+          <p className="text-sm text-slate-500 text-center mb-8 max-w-xl mx-auto">
+            Our power of choice is untrammelled and when nothing prevents being able to do what we like best every pleasure.
+          </p>
+          <div className="flex flex-col gap-3">
+            {[
+              { q: 'What is custom application development?' },
+              { q: 'What types of custom applications do you develop?' },
+              { q: 'How do you ensure the security of custom applications?' },
+              { q: 'Can you integrate custom applications with existing systems?' },
+              { q: 'Do you provide ongoing support and maintenance for custom applications?' },
+              { q: 'How does custom software differ from off-the-shelf solutions?' },
+              { q: 'What industries benefit from custom application development?' },
+              { q: 'How long does it take to develop a custom application?' },
+              { q: 'What are the cost factors involved in custom application development?' },
+            ].map((faq, idx) => (
+              <button
+                key={idx}
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                className="w-full flex items-center justify-between gap-3 px-5 py-4 bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-left text-sm font-semibold transition-colors shadow-sm"
+              >
+                <span>{faq.q}</span>
+                <Plus className={`w-5 h-5 shrink-0 transition-transform ${openFaq === idx ? 'rotate-45' : ''}`} />
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================== SECTION 10: OUR PARTNERS SLIDER (Badge style) ======================== */}
       <section className="w-full bg-white py-14 px-4 sm:px-8 lg:px-16 border-b border-slate-200">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#071330] mb-10">Our Partners</h2>
-          <div className="relative flex items-center justify-center max-w-5xl mx-auto px-6">
+          <div className="relative flex items-center justify-center max-w-5xl mx-auto px-10">
             <button
               onClick={prevPartners}
-              className="absolute left-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-cyan-600 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all"
+              className="absolute left-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all text-lg font-bold"
             >
-              <ChevronLeft className="w-5 h-5" />
+              ‹
             </button>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 w-full px-6 transition-all duration-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full px-4 transition-all duration-300">
               {allPartners.slice(partnerIndex, partnerIndex + 4).map((p, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center p-4 bg-white rounded-xl border border-slate-200 hover:border-cyan-400 hover:shadow-md transition-all">
-                  <div className="h-20 w-full flex items-center justify-center p-2">
-                    <img
-                      src={p.src}
-                      alt={p.name}
-                      className="max-h-full max-w-full object-contain"
-                      onError={(e) => { e.target.src = p.fallback; }}
-                    />
+                <div key={idx} className="flex flex-col items-center justify-center">
+                  {/* Badge-shield style card */}
+                  <div className="w-36 sm:w-40 relative flex flex-col items-center">
+                    <div className="w-full bg-[#1a2d6b] rounded-t-2xl pt-4 pb-2 px-3 flex items-center justify-center min-h-[70px]">
+                      <img
+                        src={p.src}
+                        alt={p.name}
+                        className="max-h-12 max-w-full object-contain filter brightness-0 invert"
+                        onError={(e) => { e.target.src = p.fallback; e.target.className = 'max-h-10 max-w-full object-contain'; }}
+                      />
+                    </div>
+                    <div className="w-full bg-[#1a3a8f] px-2 py-2 text-center">
+                      <p className="text-[10px] font-bold text-white leading-tight uppercase tracking-wide">{p.role}</p>
+                    </div>
+                    {/* Stars row */}
+                    <div className="w-full bg-[#1a2d6b] px-2 py-1.5 flex justify-center gap-0.5 rounded-b-xl">
+                      {[...Array(3)].map((_, i) => (
+                        <svg key={i} className="w-3 h-3 text-amber-400 fill-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-xs font-bold text-slate-800 mt-2 text-center">{p.name}</span>
-                  <span className="text-[10px] text-slate-500 text-center">{p.role}</span>
                 </div>
               ))}
             </div>
             <button
               onClick={nextPartners}
-              className="absolute right-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-cyan-600 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all"
+              className="absolute right-0 z-10 w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 transition-all text-lg font-bold"
             >
-              <ChevronRight className="w-5 h-5" />
+              ›
             </button>
           </div>
         </div>
