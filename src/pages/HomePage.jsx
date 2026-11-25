@@ -1,270 +1,367 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, CheckCircle2, Layers, Code, Sparkles,
-  Globe, Smartphone, Database, Cloud, TrendingUp, ShieldCheck,
-  Star, Award, Users, Clock
+  ArrowRight, CheckCircle2, Layers, Code, Globe,
+  Smartphone, Database, Cloud, TrendingUp, ShieldCheck,
+  Star, Award, Users, Cpu, Settings, Zap, Monitor
 } from 'lucide-react';
 
-// Network constellation SVG
-function ConstellationBg() {
-  return (
-    <svg className="absolute top-0 left-0 w-full h-full opacity-20 dark:opacity-30 pointer-events-none" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="hglow" cx="30%" cy="40%" r="60%">
-          <stop offset="0%" stopColor="#00d4ff" stopOpacity="0.15" />
-          <stop offset="100%" stopColor="transparent" />
-        </radialGradient>
-      </defs>
-      <rect width="1200" height="700" fill="url(#hglow)" />
-      {/* Lines */}
-      {[[40,80,180,140],[180,140,320,80],[180,140,260,240],[320,80,500,120],
-        [260,240,400,300],[400,300,520,220],[520,220,680,180],[680,180,820,250],
-        [820,250,960,180],[960,180,1100,230],[1100,230,1160,120],
-        [40,80,120,30],[320,80,420,20],[680,180,750,80],[960,180,1050,80]
-      ].map(([x1,y1,x2,y2], i) => (
-        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#00d4ff" strokeWidth="0.8" opacity="0.5" />
-      ))}
-      {/* Nodes */}
-      {[[40,80],[180,140],[320,80],[260,240],[400,300],[520,220],[680,180],[820,250],[960,180],[1100,230],[500,120],[750,80],[1050,80],[1160,120]].map(([cx,cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r={i % 3 === 0 ? 4 : 3} fill="#00d4ff" opacity="0.7" />
-      ))}
-    </svg>
-  );
-}
+const clientLogos = [
+  '/images/5logo.webp', '/images/1 (1).webp', '/images/4 (1).webp',
+  '/images/5 (1).webp', '/images/6 (1).webp', '/images/7 (1).webp',
+  '/images/8 (1).webp', '/images/9 (1).webp', '/images/10 (1).webp',
+  '/images/4logo.webp', '/images/2logo.webp', '/images/1logo.webp',
+  '/images/3logo.webp', '/images/5logo.webp',
+];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#f8faff] dark:bg-[#060b26] text-slate-800 dark:text-slate-100">
+    <div className="w-full bg-white text-slate-800 overflow-x-hidden">
 
-      {/* ===== HERO ===== */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-8 pb-16">
-        <ConstellationBg />
-
-        {/* Right-side chevrons decoration */}
-        <div className="absolute top-16 right-6 sm:right-16 pointer-events-none opacity-25 dark:opacity-35 flex items-center gap-1">
-          {[1,2,3,4,5].map(i => (
-            <svg key={i} viewBox="0 0 20 36" className="w-4 sm:w-7 h-8 sm:h-14 text-cyan-500" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M4 4L16 18L4 32" />
-            </svg>
-          ))}
+      {/* ===================== HERO SECTION ===================== */}
+      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-[#06112a]">
+        {/* Animated gradient blobs */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute top-[-10%] left-[-5%] w-[450px] sm:w-[600px] h-[450px] sm:h-[600px] rounded-full bg-cyan-500/10 blur-[120px]" />
+          <div className="absolute bottom-[-10%] right-[-5%] w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full bg-blue-600/15 blur-[110px]" />
+          <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full bg-indigo-500/10 blur-[80px]" />
         </div>
 
-        {/* Ambient glows */}
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Grid pattern overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              'linear-gradient(#00d4ff 1px, transparent 1px), linear-gradient(90deg, #00d4ff 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-950/80 border border-cyan-300 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs font-semibold mb-6">
-              <Sparkles className="w-3.5 h-3.5" />
-              A Reference Based Software Engineering Company
+        {/* Decorative colored pills left */}
+        <div className="hidden sm:flex absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 flex-col gap-2 opacity-80">
+          <div className="w-6 h-1.5 bg-amber-400 rotate-45 rounded-full" />
+          <div className="w-8 h-1.5 bg-cyan-400 rotate-45 rounded-full" />
+          <div className="w-6 h-1.5 bg-rose-500 rotate-45 rounded-full" />
+        </div>
+
+        {/* Star sparkle */}
+        <div className="absolute top-16 right-16 hidden xl:block opacity-60">
+          <svg width="42" height="42" viewBox="0 0 40 40" fill="none">
+            <path d="M20 0L23 15L38 20L23 25L20 40L17 25L2 20L17 15L20 0Z" fill="#00d4ff" />
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 py-14 sm:py-20 w-full z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left: Text */}
+            <div className="lg:col-span-6 text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-6">
+                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                A Reference Based Software Engineering Company
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[56px] font-black text-white leading-[1.12] mb-6">
+                Building{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                  Digital Solutions
+                </span>
+                <br />
+                That Drive Real Growth
+              </h1>
+
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+                Xpecto® is a leading IT solutions company with 11+ years of experience delivering
+                custom applications, web development, mobile apps, and enterprise software to
+                businesses across 19+ countries.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mb-9">
+                <Link
+                  to="/services/custom-application"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-cyan-500/30 transition-all hover:-translate-y-0.5"
+                >
+                  Custom Applications <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/services/web-application"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 border border-white/20 hover:bg-white/10 text-white font-semibold text-sm transition-all"
+                >
+                  Web Applications <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Trust row */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-xs text-slate-400">
+                <div className="flex items-center gap-1.5">
+                  <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  <span className="text-white font-semibold">Clutch 5.0</span>
+                </div>
+                <div className="hidden sm:block w-px h-4 bg-slate-700" />
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                  <span>D-U-N-S® Registered</span>
+                </div>
+                <div className="hidden sm:block w-px h-4 bg-slate-700" />
+                <div className="flex items-center gap-1.5">
+                  <Users className="w-4 h-4 text-emerald-400" />
+                  <span>500+ Clients</span>
+                </div>
+                <div className="hidden sm:block w-px h-4 bg-slate-700" />
+                <div className="flex items-center gap-1.5">
+                  <Globe className="w-4 h-4 text-blue-400" />
+                  <span>19 Countries</span>
+                </div>
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
-              Transforming Vision Into{' '}
-              <span className="gradient-text">Scalable Digital Reality</span>
-            </h1>
+            {/* Right: Hero Image + Floating Badges */}
+            <div className="lg:col-span-6 relative flex justify-center items-center mt-4 lg:mt-0">
+              {/* Outer glow */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/20 via-blue-500/15 to-indigo-500/20 rounded-3xl blur-2xl pointer-events-none" />
 
-            <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-              We engineer <strong>custom enterprise applications</strong>, high-performance <strong>web applications</strong>, and cloud-native solutions that empower modern businesses to outperform the competition — since 2013.
-            </p>
+              <div className="relative w-full max-w-lg lg:max-w-full rounded-3xl overflow-hidden border border-cyan-500/25 bg-[#0a193a] shadow-2xl shadow-cyan-950/50">
+                <img
+                  src="/images/hero-showcase.jpg"
+                  alt="Xpecto Digital Solutions Architecture"
+                  className="w-full h-[260px] sm:h-[340px] lg:h-[400px] object-cover"
+                  onError={(e) => {
+                    e.target.src = '/images/consulting_img.jpg';
+                  }}
+                />
+                {/* Subtle gradient overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06112a]/80 via-transparent to-transparent pointer-events-none" />
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Link to="/services/custom-application"
-                className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-cyan-500/30 transition-all hover:-translate-y-0.5 flex items-center gap-2 group">
-                Explore Custom Applications
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/services/web-application"
-                className="px-7 py-3.5 rounded-xl bg-white dark:bg-[#0c1544] border border-slate-300 dark:border-cyan-500/30 text-slate-700 dark:text-cyan-300 font-semibold text-sm hover:border-cyan-500 dark:hover:bg-[#121f66] transition-all flex items-center gap-2">
-                Explore Web Applications <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-5 text-xs text-slate-500 dark:text-slate-400">
-              <div className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                <span className="font-semibold">Clutch 5.0</span>
-              </div>
-              <div className="w-px h-4 bg-slate-300 dark:bg-slate-700" />
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-cyan-500" />
-                <span>D-U-N-S® Registered</span>
-              </div>
-              <div className="w-px h-4 bg-slate-300 dark:bg-slate-700" />
-              <div className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-emerald-500" />
-                <span>500+ Projects Delivered</span>
-              </div>
-              <div className="w-px h-4 bg-slate-300 dark:bg-slate-700" />
-              <div className="flex items-center gap-1.5">
-                <Globe className="w-4 h-4 text-blue-500" />
-                <span>19 Countries Served</span>
+                {/* Bottom overlay mini-stats bar */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-2 sm:gap-3 bg-[#06112a]/80 backdrop-blur-md border border-white/10 rounded-2xl p-3 sm:p-4">
+                  <div className="text-center">
+                    <div className="text-base sm:text-xl font-black text-cyan-400">4000+</div>
+                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Projects</div>
+                  </div>
+                  <div className="text-center border-x border-white/10">
+                    <div className="text-base sm:text-xl font-black text-white">11+ Yrs</div>
+                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Experience</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-base sm:text-xl font-black text-emerald-400">500+</div>
+                    <div className="text-[10px] sm:text-xs text-slate-300 font-medium">Happy Clients</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== KEY SERVICES CARDS ===== */}
-      <section className="py-20 bg-white dark:bg-[#04081c] border-y border-slate-200 dark:border-cyan-950/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">Our Core Services</p>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white">Specialized Engineering Offerings</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-sm mt-3">Two primary pillars of Xpecto® software engineering — precision-built for enterprise needs.</p>
+      {/* ===================== CLIENT LOGOS MARQUEE ===================== */}
+      <section className="w-full bg-white border-b border-slate-100 py-7 overflow-hidden">
+        <div className="text-center mb-4 px-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-slate-400">
+            Trusted By Leading Businesses Worldwide
+          </p>
+        </div>
+        <div className="w-full overflow-hidden">
+          <div className="animate-marquee flex items-center gap-10 sm:gap-16">
+            {[...clientLogos, ...clientLogos].map((src, idx) => (
+              <div key={idx} className="shrink-0 flex items-center justify-center px-3 sm:px-4 py-2">
+                <img
+                  src={src}
+                  alt="client"
+                  className="h-8 sm:h-11 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== SERVICES SECTION ===================== */}
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-16 bg-[#f4f7ff]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase text-cyan-600 mb-2 block">
+              Our Services
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#071330]">
+              Complete IT Solutions Under One Roof
+            </h2>
+            <p className="text-sm text-slate-500 mt-3 max-w-xl mx-auto">
+              From web and mobile apps to enterprise software and digital marketing — we cover everything.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1: Custom Application */}
-            <div className="group bg-gradient-to-br from-slate-50 to-cyan-50/30 dark:from-[#080f3a] dark:to-[#050926] border-2 border-cyan-500/30 hover:border-cyan-500 dark:hover:border-cyan-400 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-5 group-hover:bg-cyan-500 group-hover:border-cyan-500 transition-all duration-300">
-                  <Layers className="w-7 h-7 text-cyan-600 dark:text-cyan-400 group-hover:text-white transition-colors" />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+            {[
+              { icon: Globe, label: 'Website Development', link: '/services/web-application', color: 'text-cyan-600', bg: 'bg-cyan-50', border: 'hover:border-cyan-400' },
+              { icon: Monitor, label: 'Web Applications', link: '/services/web-application', color: 'text-blue-600', bg: 'bg-blue-50', border: 'hover:border-blue-400' },
+              { icon: Layers, label: 'Custom Applications', link: '/services/custom-application', color: 'text-indigo-600', bg: 'bg-indigo-50', border: 'hover:border-indigo-400' },
+              { icon: Smartphone, label: 'Mobile Applications', link: '/services/custom-application', color: 'text-pink-600', bg: 'bg-pink-50', border: 'hover:border-pink-400' },
+              { icon: TrendingUp, label: 'Digital Marketing', link: '/services/web-application', color: 'text-orange-600', bg: 'bg-orange-50', border: 'hover:border-orange-400' },
+              { icon: Cloud, label: 'Cloud & Hosting', link: '/services/custom-application', color: 'text-sky-600', bg: 'bg-sky-50', border: 'hover:border-sky-400' },
+              { icon: Database, label: 'CRM & ERP Systems', link: '/services/custom-application', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'hover:border-emerald-400' },
+              { icon: ShieldCheck, label: 'Security & Compliance', link: '/services/custom-application', color: 'text-rose-600', bg: 'bg-rose-50', border: 'hover:border-rose-400' },
+            ].map(({ icon: Icon, label, link, color, bg, border }, i) => (
+              <Link
+                key={i}
+                to={link}
+                className={`flex flex-col items-center gap-3 p-4 sm:p-6 bg-white rounded-2xl border-2 border-transparent ${border} shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-all group text-center`}
+              >
+                <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl ${bg} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${color}`} />
                 </div>
-                <div className="inline-block px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-800 text-[11px] font-semibold mb-4">
+                <span className="text-xs sm:text-sm font-bold text-[#071330]">{label}</span>
+                <ArrowRight className={`w-3.5 h-3.5 ${color} opacity-0 group-hover:opacity-100 transition-opacity`} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== CUSTOM + WEB APP FEATURE CARDS ===================== */}
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase text-cyan-600 mb-2 block">
+              Our Core Expertise
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#071330]">
+              Specialized Engineering Offerings
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Card 1: Custom Application */}
+            <div className="group relative bg-[#06112a] rounded-3xl p-6 sm:p-9 overflow-hidden border border-cyan-500/20 hover:border-cyan-500/50 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-500/10 flex flex-col">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center mb-5 group-hover:bg-cyan-500/25 transition-all">
+                  <Settings className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-400" />
+                </div>
+                <div className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[11px] font-semibold mb-4 self-start">
                   Enterprise Grade
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-3">
                   Custom Application Development
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
-                  Tailored enterprise software — custom ERP/CRM systems, mobile apps, legacy codebase modernization, automated data processing — built to mirror your exact business workflows.
+                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                  Tailored enterprise software — custom ERP, CRM, mobile apps, and intelligent
+                  automation — built to match your exact business workflows and goals.
                 </p>
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2.5 mb-7 flex-1">
                   {[
-                    'Mobile Apps (iOS, Android, React Native, Flutter)',
+                    'Mobile Apps (iOS, Android, React Native)',
                     'Custom CRM, ERP & Enterprise Portals',
-                    'Legacy Codebase Modernization',
+                    'IoT & SaaS Application Development',
                     'AI & Machine Learning Integration',
-                    'API & Third-Party Integrations',
                   ].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-500 shrink-0" /> {f}
+                    <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-cyan-500 shrink-0" /> {f}
                     </div>
                   ))}
                 </div>
+                <Link
+                  to="/services/custom-application"
+                  className="mt-auto w-full flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm transition-all group/btn"
+                >
+                  <span>Explore Custom Applications</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
               </div>
-              <Link to="/services/custom-application"
-                className="mt-auto w-full flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm transition-all group/btn">
-                <span>View Custom Application Page</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
             </div>
 
             {/* Card 2: Web Application */}
-            <div className="group bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-[#080f3a] dark:to-[#050926] border-2 border-blue-500/30 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mb-5 group-hover:bg-blue-500 group-hover:border-blue-500 transition-all duration-300">
-                  <Code className="w-7 h-7 text-blue-600 dark:text-blue-400 group-hover:text-white transition-colors" />
+            <div className="group relative bg-[#06112a] rounded-3xl p-6 sm:p-9 overflow-hidden border border-blue-500/20 hover:border-blue-500/50 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mb-5 group-hover:bg-blue-500/25 transition-all">
+                  <Code className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400" />
                 </div>
-                <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-800 text-[11px] font-semibold mb-4">
+                <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-semibold mb-4 self-start">
                   High-Performance Web
                 </div>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white mb-3 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-3">
                   Web Application Development
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
-                  Single Page Applications, Progressive Web Apps, multi-tenant SaaS platforms, and secure partner portals — built on React, Next.js, Node.js with 95+ Lighthouse scores.
+                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                  Responsive, fast, and scalable web applications — eCommerce platforms, SaaS
+                  products, portals, and progressive web apps built with modern technologies.
                 </p>
-                <div className="space-y-2 mb-6">
+                <div className="space-y-2.5 mb-7 flex-1">
                   {[
-                    'Progressive Web Apps (PWA) — Offline, Installable',
-                    'Multi-Tenant SaaS with Stripe Billing',
-                    'Real-Time Dashboards with WebSockets',
-                    'eCommerce & PCI-DSS Checkout Platforms',
-                    'Secure Customer & Partner Self-Service Portals',
+                    'eCommerce & Multi-Vendor Platforms',
+                    'Laravel, PHP, CI Development',
+                    'React / Next.js SPAs & PWAs',
+                    'News & Enterprise Portal Development',
                   ].map((f, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0" /> {f}
+                    <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0" /> {f}
                     </div>
                   ))}
                 </div>
+                <Link
+                  to="/services/web-application"
+                  className="mt-auto w-full flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 text-white font-bold text-sm transition-all group/btn"
+                >
+                  <span>Explore Web Applications</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
               </div>
-              <Link to="/services/web-application"
-                className="mt-auto w-full flex items-center justify-between px-5 py-3.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-400 hover:to-indigo-500 text-white font-bold text-sm transition-all group/btn">
-                <span>View Web Application Page</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== ALL SERVICES GRID ===== */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">Full Service Portfolio</p>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Complete IT Solutions</h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { icon: Globe, label: 'Website Development', link: '/services/web-application', color: 'text-cyan-500' },
-              { icon: Code, label: 'Web Applications', link: '/services/web-application', color: 'text-blue-500' },
-              { icon: Layers, label: 'Custom Applications', link: '/services/custom-application', color: 'text-purple-500' },
-              { icon: Smartphone, label: 'Mobile Applications', link: '/services/custom-application', color: 'text-pink-500' },
-              { icon: TrendingUp, label: 'Digital Marketing', link: '/services/web-application', color: 'text-orange-500' },
-              { icon: Cloud, label: 'Cloud & Hosting', link: '/services/custom-application', color: 'text-sky-500' },
-              { icon: Database, label: 'CRM & ERP Systems', link: '/services/custom-application', color: 'text-emerald-500' },
-              { icon: ShieldCheck, label: 'Security & Compliance', link: '/services/custom-application', color: 'text-rose-500' },
-            ].map((svc, i) => {
-              const Icon = svc.icon;
-              return (
-                <Link key={i} to={svc.link}
-                  className="flex flex-col items-center gap-3 p-5 bg-white dark:bg-[#070e36] border border-slate-200 dark:border-slate-800 rounded-xl hover:border-cyan-500/40 dark:hover:border-cyan-500/40 transition-all group card-glow text-center">
-                  <Icon className={`w-7 h-7 ${svc.color} group-hover:scale-110 transition-transform`} />
-                  <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">{svc.label}</span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== WHY XPECTO / STATS ===== */}
-      <section className="py-20 bg-white dark:bg-[#04081c] border-y border-slate-200 dark:border-cyan-950/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* ===================== WHY XPECTO ===================== */}
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-16 bg-[#06112a]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            {/* Left */}
             <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">Why Xpecto®</p>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4">
+              <span className="text-xs font-bold tracking-widest uppercase text-cyan-400 mb-2 block">
+                Why Xpecto®
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight mb-5">
                 "A Reference Based Company"
               </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
-                Over 85% of our enterprise engagements come directly through client referrals. We don't just deliver code — we build long-term engineering partnerships that protect your technology investments, reduce technical debt, and maintain maximum uptime.
+              <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
+                Over 80% of our engagements come directly through client referrals. We build
+                long-term technology partnerships — not just one-time deliveries.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-5">
                 {[
-                  { val: '98%', label: 'Client Retention Rate' },
-                  { val: '500+', label: 'Global Deployments' },
-                  { val: '10+', label: 'Years Engineering' },
-                  { val: '19', label: 'Countries Served' },
-                ].map((s, i) => (
+                  { val: '4000+', label: 'Projects Delivered' },
+                  { val: '500+', label: 'Happy Clients' },
+                  { val: '11+', label: 'Years Experience' },
+                  { val: '19+', label: 'Countries Served' },
+                ].map(({ val, label }, i) => (
                   <div key={i} className="border-l-4 border-cyan-500 pl-4">
-                    <div className="text-2xl font-extrabold text-slate-900 dark:text-white">{s.val}</div>
-                    <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{s.label}</div>
+                    <div className="text-2xl sm:text-3xl font-black text-white">{val}</div>
+                    <div className="text-xs text-slate-400 mt-0.5">{label}</div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-1 gap-4">
+
+            {/* Right: feature list */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {[
-                { emoji: '🎯', title: 'Zero Lock-In Guarantee', desc: 'Clean, standards-compliant code with complete documentation. You own everything.' },
-                { emoji: '🔒', title: 'NDA & IP Protection', desc: 'Full intellectual property transfer upon project completion.' },
-                { emoji: '👷', title: 'Direct Architect Access', desc: 'Communicate directly with senior technical leads — no middle layers.' },
-                { emoji: '📊', title: 'Transparent Reporting', desc: 'Weekly sprint reports, Jira board access, and live staging environments throughout.' },
-              ].map((point, i) => (
-                <div key={i} className="flex gap-4 p-4 bg-slate-50 dark:bg-[#070e36] border border-slate-200 dark:border-slate-800 rounded-xl">
-                  <span className="text-2xl shrink-0">{point.emoji}</span>
+                { icon: ShieldCheck, title: 'Zero Lock-In Guarantee', desc: 'Clean, standards-compliant code with full documentation — you own everything.', color: 'text-cyan-400' },
+                { icon: Cpu, title: 'Direct Architect Access', desc: 'Communicate directly with senior technical leads — no middle layers.', color: 'text-blue-400' },
+                { icon: Zap, title: 'On-Time Delivery', desc: 'Agile sprints with weekly progress reports and live staging environments.', color: 'text-amber-400' },
+                { icon: Globe, title: 'Global Reach', desc: '19+ countries served with 24/7 support and multilingual communication.', color: 'text-emerald-400' },
+              ].map(({ icon: Icon, title, desc, color }, i) => (
+                <div key={i} className="flex gap-4 p-4 sm:p-5 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/[0.08] transition-all">
+                  <div className={`w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 ${color}`}>
+                    <Icon className="w-5 h-5" />
+                  </div>
                   <div>
-                    <h4 className="font-bold text-slate-800 dark:text-white text-sm mb-1">{point.title}</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{point.desc}</p>
+                    <h4 className="font-bold text-white text-sm mb-1">{title}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -273,28 +370,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== BOTTOM CTA BANNER ===== */}
-      <section className="py-14">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 rounded-3xl p-10 text-center shadow-2xl shadow-blue-500/20 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10" style={{backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '20px 20px'}} />
+      {/* ===================== INDUSTRIES ===================== */}
+      <section className="w-full py-14 sm:py-20 px-4 sm:px-8 lg:px-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 sm:mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase text-cyan-600 mb-2 block">
+              Industries We Serve
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#071330]">
+              Serving Every Industry
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4">
+            {[
+              { label: 'Finance', icon: TrendingUp },
+              { label: 'eCommerce', icon: Globe },
+              { label: 'Manufacturing', icon: Settings },
+              { label: 'Healthcare', icon: ShieldCheck },
+              { label: 'Education', icon: Award },
+              { label: 'Real Estate', icon: Database },
+            ].map(({ label, icon: Icon }, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center gap-3 p-5 bg-[#f4f7ff] rounded-2xl hover:bg-cyan-50 hover:shadow-sm border border-transparent hover:border-cyan-200 transition-all group text-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center group-hover:bg-cyan-500 transition-colors">
+                  <Icon className="w-5 h-5 text-cyan-600 group-hover:text-white transition-colors" />
+                </div>
+                <span className="text-xs sm:text-sm font-bold text-[#071330]">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== CTA BANNER ===================== */}
+      <section className="w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-[#f4f7ff]">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative bg-gradient-to-r from-[#1a2d6b] via-[#06112a] to-[#1a2d6b] rounded-3xl p-8 sm:p-14 text-center overflow-hidden shadow-2xl">
+            {/* Dot pattern */}
+            <div
+              className="absolute inset-0 opacity-10"
+              style={{
+                backgroundImage: 'radial-gradient(white 1px, transparent 1px)',
+                backgroundSize: '20px 20px',
+              }}
+            />
+            {/* Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-cyan-500/20 blur-3xl pointer-events-none" />
+
             <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">Ready to Build Something Extraordinary?</h2>
-              <p className="text-cyan-100 text-sm mb-8 max-w-xl mx-auto">Get a free technical consultation with our lead architects within 24 hours.</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/services/custom-application"
-                  className="px-7 py-3.5 bg-white text-cyan-700 font-bold text-sm rounded-xl hover:bg-cyan-50 transition-all shadow-lg">
-                  Custom Application
+              <span className="text-xs font-bold tracking-widest uppercase text-cyan-400 mb-3 block">
+                Get In Touch
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4">
+                Ready to Build Something Extraordinary?
+              </h2>
+              <p className="text-slate-300 text-sm mb-8 max-w-xl mx-auto">
+                Get a free technical consultation with our lead architects within 24 hours. No commitments.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <Link
+                  to="/services/custom-application"
+                  className="px-6 sm:px-7 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-sm rounded-xl shadow-lg shadow-cyan-500/30 transition-all hover:-translate-y-0.5 flex items-center gap-2"
+                >
+                  Custom Application <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to="/services/web-application"
-                  className="px-7 py-3.5 border-2 border-white/40 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all">
-                  Web Application
+                <Link
+                  to="/services/web-application"
+                  className="px-6 sm:px-7 py-3.5 border-2 border-white/30 text-white font-bold text-sm rounded-xl hover:bg-white/10 transition-all flex items-center gap-2"
+                >
+                  Web Application <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }
